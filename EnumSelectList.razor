@@ -1,0 +1,10 @@
+﻿@typeparam T
+@using Application.Common.Extensions;
+
+<InputSelect class="form-control" @bind-Value="@SelectedItem">
+    <option value="">-- Select an item --</option>
+    @foreach (T e in Enum.GetValues(typeof(T)))
+    {
+        <option value="@e">@e.ToDisplayName()</option>
+    }
+</InputSelect>
